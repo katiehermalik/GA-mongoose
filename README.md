@@ -9,6 +9,7 @@ Utilize the following resources to research the commands you will need:
 - Your notes from today
 - [MongoDB Manual](https://docs.mongodb.org/manual/reference/operator/query/#query-selectors)
 - [Mongoose Docs](http://mongoosejs.com/docs/guide.html)
+- Shahzad's cheatsheet 
 
 # Setup
 1. Start your mongo server with `mongod`
@@ -63,7 +64,7 @@ const vampireSchema = new Schema({
 Our vampire collection will look something like this:
 
 ``` javascript
-var vampire = {
+const vampire = {
   name: 'Count Chocula',
   hair_color: 'brown',
   eye_color: 'brown',
