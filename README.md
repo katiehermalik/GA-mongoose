@@ -6,7 +6,7 @@ For this **2 day** homework assignment, you will be using some  mongoose command
 
 # Resources
 Utilize the following resources to research the commands you will need:
-- Your notes from today: [Mongoose](https://github.com/ga-students/wdi-remote-gizmo/blob/master/unit_2/w05d05/instructor_notes/3.%20MONGOOSE.md) and [Advanced Mongoose](https://github.com/ga-students/wdi-remote-gizmo/blob/master/unit_2/w05d05/instructor_notes/4.%20ADVANCED_MONGOOSE.md)
+- Your notes from today
 - [MongoDB Manual](https://docs.mongodb.org/manual/reference/operator/query/#query-selectors)
 - [Mongoose Docs](http://mongoosejs.com/docs/guide.html)
 
