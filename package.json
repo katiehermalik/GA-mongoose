@@ -1,0 +1,22 @@
+{
+  "name": "mongoose-vampires-hw-test",
+  "version": "1.0.0",
+  "description": "For this **2 day** homework assignment, you will be using some  mongoose commands and you will be **reading documentation**  to find **new** queries/techniques to complete the following activities. Researching queries and implementing them is a big part of this homework!",
+  "main": "vampire_app/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/WebDev-Connected-Classroom/mongoose-vampires-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
