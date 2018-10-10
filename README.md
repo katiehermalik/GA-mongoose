@@ -88,6 +88,8 @@ const vampire = {
 
 8. Set up your `vampire_app.js` file to connect to your `vampires` database.
 
+9. You may now test your schema with the automated tests by running ```npm test``` in your terminal.
+
 <hr>
 &#x1F534; The commit message should read: <br>
 "Commit 1 - made a schema"
