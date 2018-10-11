@@ -76,9 +76,7 @@ const vampire = {
 
 3. Build a vampire **schema** and **model** that matches the object above. Export your model.
 
->Pause. Take a minute to do a little research and come up with a proposed answer to this question:
--What's the difference between a _Schema_ and a _Model_?
-
+>Pause. Take a minute to do a little research and come up with an answer to this question: What's the difference between a _Schema_ and a _Model_?
 
 4. Go to the Mongoose documentation to learn more about validations and defaults: http://mongoosejs.com/docs/api.html
 
