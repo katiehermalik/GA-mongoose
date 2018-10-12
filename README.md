@@ -169,7 +169,7 @@ Select all the vampires that:
 
 # Part 2
 
-### Before you continue on to part two: check it out/remember: Mongoose has some sweet helper functions that can make all this a little easier. See below
+### Before you continue on to part two, check it out/remember: Mongoose has some sweet helper functions that can make all this a little easier. See below
 
 Mongoose's default find gives you an array of objects.  But what if you know you only want one object?  These convenience methods just give you one object without the usual array surrounding it.
 
