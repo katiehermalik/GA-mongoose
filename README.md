@@ -245,7 +245,6 @@ Select all vampires that:
 ## 8\. Replace
 
 1. replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
-2. replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
 
 <hr>
 &#x1F534; The commit message should read: <br>
@@ -254,10 +253,7 @@ Select all vampires that:
 
 ## 9\. Update
 
-1. Update 'Guy Man' to have a gender of 'f'
 2. Update 'Eve' to have a gender of 'm'
-3. Update 'Guy Man' to have an array called 'hates' that includes 'clothes' and 'jobs'
-4. Update 'Guy Man's' hates array also to include 'alarm clocks' and 'jackalopes'
 5. Rename 'Eve's' name field to 'moniker'
 6. We now no longer want to categorize female gender as "f", but rather as **fems**. Update all females so that the they are of gender "fems".
 
