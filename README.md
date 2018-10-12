@@ -1,6 +1,8 @@
+![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
 # Mongoose Vampires
 
-For this **2 day** homework assignment, you will be using some  mongoose commands and you will be **reading documentation**  to find **new** queries/techniques to complete the following activities. Researching queries and implementing them is a big part of this homework!
+For this two part homework assignment, you will be using some  mongoose commands and you will be **reading documentation**  to find **new** queries/techniques to complete the following activities. Researching queries and implementing them is a big part of this homework!
 
 ![mongoose](https://s-media-cache-ak0.pinimg.com/564x/ee/b7/a9/eeb7a99383582d53e65ffcc0e4a225bd.jpg)
 
@@ -11,21 +13,17 @@ Utilize the following resources to research the commands you will need:
 - [Mongoose Docs](http://mongoosejs.com/docs/guide.html)
 - Shahzad's cheatsheet 
 
-# Setup
+## Setup
 1. Start your mongo server with `mongod`
 
-2. Open a new tab and open your mongo console with `mongo`.
-
-3. Inside your mongo console, connect to a new database called `vampires` with the command `use vampires`
-
-4. **Open a new terminal tab** and navigate to your homework folder for tonight which includes:
+2. **Open a new terminal tab** and navigate to your homework folder for tonight which includes:
 
 - A folder for your `vampire_app`
 - A file for writing your app called `app.js`. You will write your code in here (even for the database).
 **Comment out your database commands** as you get them working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.
 - A file called `populateVampires.js` that includes data on vampires that you will add (later).
 
-5. `npm init`.  Install and require `mongoose`.
+3. `npm init`.  Install and require `mongoose`.
 
 ## What is a schema
 
@@ -51,17 +49,17 @@ Lets design a schema using mongoose and then use it to create some documents and
 
 1. Create a folder inside your `vampire_app` called `models`.
 
-2. Create a file inside your `model` folder called `vampire.js`. You will create your schema and model in this file.
+2. Create a file inside your `models` folder called `vampire.js` (**singular**). You will create your schema and model in this file.
 
 To start your schema:
 ```javascript
 const vampireSchema = new Schema({
-//write your schema fields here
+  //write your schema fields here
 
 });
 ```
 
-Our vampire collection will look something like this:
+A typical object in our vampire collection will look something like this:
 
 ``` javascript
 const vampire = {
@@ -77,6 +75,8 @@ const vampire = {
 ```
 
 3. Build a vampire **schema** and **model** that matches the object above. Export your model.
+
+>Pause. Take a minute to do a little research and come up with an answer to this question: What's the difference between a _Schema_ and a _Model_?
 
 4. Go to the Mongoose documentation to learn more about validations and defaults: http://mongoosejs.com/docs/api.html
 
@@ -114,7 +114,7 @@ Vampire.collection.insertMany(vampireData,(err, data) => {
   });
 ```
 
-# Day 1: 
+# Part 1: 
 
 ### Add some new vampire data
 
@@ -167,9 +167,9 @@ Select all the vampires that:
 "Commit 5 - selected more vampires"
 <hr>
 
-# Day 2
+# Part 2
 
-### Before you continue on to day two: check it out/remember: Mongoose has some sweet helper functions that can make all this a little easier. See below
+### Before you continue on to part two: check it out/remember: Mongoose has some sweet helper functions that can make all this a little easier. See below
 
 Mongoose's default find gives you an array of objects.  But what if you know you only want one object?  These convenience methods just give you one object without the usual array surrounding it.
 
@@ -275,7 +275,7 @@ Select all vampires that:
 
 # Hungry for more
 
-1. Make an index route that will res.send the json of all the data in our database.
+1. Make an index route that will `res.send()` (or even better--`res.json()`--look it up!) the json of all the data in our database.
 
 2. If number 1 was easy, try to connect your database to your application and show a proper index page that displays your vampire data. If this is also easy, create a show page as well where you are showing individual vampire data.
 
