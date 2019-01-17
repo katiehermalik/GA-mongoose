@@ -11,27 +11,33 @@ Utilize the following resources to research the commands you will need:
 - Your notes from today
 - [MongoDB Manual](https://docs.mongodb.org/manual/reference/operator/query/#query-selectors)
 - [Mongoose Docs](http://mongoosejs.com/docs/guide.html)
-- Shahzad's cheatsheet 
+
 
 ## Setup
-1. Start your mongo server with `mongod`
 
-2. **Open a new terminal tab** and navigate to your homework folder for tonight which includes:
+1. If it's not already running, start your mongo server with `mongod`.
 
-- A folder for your `vampire_app`
-- A file for writing your app called `app.js`. You will write your code in here (even for the database).
-**Comment out your database commands** as you get them working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.
+2. Fork and clone this repo, which includes:
+
+  - A folder for your `vampire_app`.
+
+  - A file for writing your app called `app.js`. You will write your code in here (even for the database).
+
+  - Don't forget to `npm install`
+
+**Comment out each database query** once you get it working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.
+
 - A file called `populateVampires.js` that includes data on vampires that you will add (later).
 
-3. `npm init`.  Install and require `mongoose`.
+3. Install `mongoose` with `npm`.  Require it in `app.js`.
 
-## What is a schema
+## What is a schema?
 
 A schema is a way to organize, ahead of time, what a group of data is going to look like. This can be at various levels of a database depending on what kind of databases you are using.
 
 Mongo, is schema-less on the database level. It doesn't care what the data looks like and will take in virtually anything as long as it's syntactically correct.
 
-## Why they are important
+## Why they are important?
 
 Even when you are using MongoDB, an inherently schema-less database, a schema can be very helpful. It helps control what is going into the database so that you can both know what is going into it, and to make validations. Note that with MongoDB, even if a piece of data is not a part of your original schema, you can still store it.
 
@@ -41,7 +47,6 @@ This is where mongoose comes in. Instead of manually making sure everything we a
 
 Mongoose, in the background, can enforce these schemas (as strictly as you like) in order to make sense of the data going into the database and to allow validation. It provides powerful and simple to use tools to do this.
 
-# The Exercise
 
 ## Building a Schema
 
@@ -51,13 +56,7 @@ Lets design a schema using mongoose and then use it to create some documents and
 
 2. Create a file inside your `models` folder called `vampire.js` (**singular**). You will create your schema and model in this file.
 
-To start your schema:
-```javascript
-const vampireSchema = new Schema({
-  //write your schema fields here
-
-});
-```
+3. Look back at the class notes to see how to start your schema; use the `Article` model as a guide.
 
 A typical object in our vampire collection will look something like this:
 
@@ -74,58 +73,68 @@ const vampire = {
 }
 ```
 
-3. Build a vampire **schema** and **model** that matches the object above. Export your model.
+4. Build a vampire **schema** and **model** that matches the object above. Export your model.
 
 >Pause. Take a minute to do a little research and come up with an answer to this question: What's the difference between a _Schema_ and a _Model_?
 
-4. Go to the Mongoose documentation to learn more about validations and defaults: http://mongoosejs.com/docs/api.html
+5. Go to the Mongoose documentation to learn more about validations and defaults: http://mongoosejs.com/docs/api.html
 
-5. The **name field is required**, so make sure that the schema accommodates for that.
+6. The **name field is required**, so make sure that the schema accommodates for that.
 
-6. Also, **no vampire will have less than 0 victims**, so add that into the schema as a validation.
+7. Also, **no vampire will have less than 0 victims**, so add that into the schema as a validation.
 
-7. Lastly, set the **default value of the hair color to blonde**.
+8. Lastly, set the **default value of the hair color to blonde**.
 
-8. Set up your `vampire_app.js` file to connect to your `vampires` database.
+9. Set up your `app.js` file to connect to your `vampires` database.
 
-9. You may now test your schema with the automated tests by running ```npm test``` in your terminal.
+10. If you like, you may now try testing your schema with the automated tests by running `npm test` in your terminal.
+
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 1 - made a schema"
+&#x1F534; Commit. Suggested message: "made a schema"
 <hr>
 
-## Inserting using mongoose
 
-Insert into the database using **create** method:
+## Add the vampire data that we gave you
 
-### Add the vampire data that we gave you
+There's an array of "vampire" JavaScript objects in `populateVampires.js`, and we need to add them add the vampires to a mongoDB vampires collection.
 
-1. Using the js objects of vampires in `populateVampires.js`, add the vampires to a vampires collection.
+In class, you inserted one object using the `.create()` method on your model.
 
-You can do this simply by providing this array to the insert method and it will create a document for each object in the array.
+I wonder if you could insert an array of vampires using the `Vampire.create()` model method?  Maybe just by passing in an array?  Perhaps you already tried it.
 
-- You have a choice to either paste the entire array into this insert command OR you could just export the array into a variable and insert it with the variable name.
+Or!
+
+### Fun fact: you can access native mongoDB methods in an object on the model: `.collection` 
+
+Maybe you can do this simply by providing this array to insert method and it will create a document for each object in the array?  
+
+If you're stuck, click below
+
+<details>
 
 ```javascript
-Vampire.collection.insertMany(vampireData,(err, data) => {
-    console.log("added provided vampire data")
-    mongoose.connection.close();
-  });
+Vampire.collection.insertMany(vampireData, (err, data) => {
+  console.log("added provided vampire data")
+  mongoose.connection.close();
+});
 ```
+
+</details>
 
 # Part 1: 
 
 ### Add some new vampire data
 
-1. Using the create method, create 4 new vampires with any qualities that you like two should be male and two should be female.
+Using the `Vampire.create()` method, create 4 new vampires with any qualities that you like two should be male and two should be female.
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 2 - added data into vampire collection"
+&#x1F534; Commit. Suggested message: "added data into vampire collection"
 <hr>
+
 
 ## Querying
+
 ### Select by comparison
 
 Write a different query for each of the following:
@@ -137,8 +146,7 @@ Write a different query for each of the following:
 5. have greater than 150 AND fewer than 500 victims
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 3 - queried for vampires"
+&#x1F534;  Commit. Suggested message: "queried for vampires"
 <hr>
 
 ### Select by exists or does not exist
@@ -150,8 +158,7 @@ Select all the vampires that:
 4. have victims AND the victims they have are greater than 1000
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 4 - selected vampires"
+&#x1F534;  Commit. Suggested message: "selected vampires"
 <hr>
 
 ### Select with OR
@@ -163,13 +170,12 @@ Select all the vampires that:
 4. have red hair or green eyes
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 5 - selected more vampires"
+&#x1F534;  Commit. Suggested message: "selected more vampires with OR"
 <hr>
 
 # Part 2
 
-### Before you continue on to part two, check it out/remember: Mongoose has some sweet helper functions that can make all this a little easier. See below
+### Before you continue on to part two, you should know that Mongoose has some sweet helper functions that can make all this a little easier. See below.
 
 Mongoose's default find gives you an array of objects.  But what if you know you only want one object?  These convenience methods just give you one object without the usual array surrounding it.
 
@@ -225,8 +231,7 @@ Select all the vampires that:
 4. love fancy cloaks but not if they also love either top hats or virgin blood * Hint-You will also have to use $nin *
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 6 - selected even more vampires"
+&#x1F534;  Commit. Suggested message: "selected even more vampires"
 <hr>
 
 ### 7\. Negative Selection
@@ -238,17 +243,15 @@ Select all vampires that:
 5. have not killed more than 200 people
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 7 - used negative selections on vampire data"
+&#x1F534;  Commit. Suggested message: "used negative selections on vampire data"
 <hr>
 
 ## 8\. Replace
 
-1. replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
+1. Replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 8 - replaced vampire data"
+&#x1F534;  Commit. Suggested message: "replaced vampire data"
 <hr>
 
 ## 9\. Update
@@ -258,19 +261,17 @@ Select all vampires that:
 6. We now no longer want to categorize female gender as "f", but rather as **fems**. Update all females so that the they are of gender "fems".
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 9 - updated vampire data"
+&#x1F534;  Commit. Suggested message: "updated vampire data"
 <hr>
 
 ## 10\. Remove
 
 1. Remove a single document wherein the hair_color is 'brown'
 2. We found out that the vampires with the blue eyes were just fakes! Let's remove all the vampires who have blue eyes from our database.
-<hr>
+
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 10 - remove vampire data"
+&#x1F534;  Commit. Suggested message: "remove vampire data"
 <hr>
 
 # Hungry for more
@@ -282,6 +283,5 @@ Select all vampires that:
 3. Have extra time? Try out a few more problems on [CodeWars](https://www.codewars.com/)
 
 <hr>
-&#x1F534; The commit message should read: <br>
-"Commit 11 - tackled some Hungry for More"
+&#x1F534;  Commit. Suggested message: "tackled some Hungry for More"
 <hr>
