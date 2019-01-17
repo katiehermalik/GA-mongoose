@@ -248,8 +248,7 @@ Select all vampires that:
 
 ## 8\. Replace
 
-1. Replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
-
+1. Replace the vampire called 'Claudia' with a vampire called 'Eve'. 
 <hr>
 &#x1F534;  Commit. Suggested message: "replaced vampire data"
 <hr>
