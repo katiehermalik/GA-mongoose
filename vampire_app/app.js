@@ -1,6 +1,6 @@
-// 1. Require your node modules
+// 1. Require Mongoose
 
-// 2. Require your model
+// 2. Require your Model
 
 // 3. Require your extra data source
 
