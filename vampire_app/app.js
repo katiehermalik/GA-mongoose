@@ -1,10 +1,10 @@
 // 1. Require your node modules
 
-// 2. Require your model (and possibly your extra data source);
+// 2. Require your model
 
-// 3. Connect your database and collection name
+// 3. Require your extra data source
 
-// 4. Open your mongoose connection
+// 4. Connect your database
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
