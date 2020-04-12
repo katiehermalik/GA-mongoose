@@ -210,13 +210,13 @@ Article.findOneAndUpdate(
 });
 ```
 ```javascript
-Article.findByIdAndRemove('5757191bce5579b805705900', (err, article)=>{
+Article.findByIdAndDelete('5757191bce5579b805705900', (err, article)=>{
   console.log(article); // log article that was removed
 });
 ```
 ```javascript
 
-Article.findOneAndRemove({ author : 'Matt' }, (err, article)=>{
+Article.findOneAndDelete({ author : 'Matt' }, (err, article)=>{
   console.log(article); // log article that was removed
 });
 ```
