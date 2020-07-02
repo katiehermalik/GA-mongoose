@@ -15,21 +15,19 @@ Utilize the following resources to research the commands you will need:
 
 ## Setup
 
-1. If it's not already running, start your mongo server with `mongod`.
-
-2. Fork and clone this repo, which includes:
+1. Fork and clone this repo, which includes:
 
   - A folder for your `vampire_app`.
 
   - A file for writing your app called `app.js`. You will write your code in here (even for the database).
 
-  - Don't forget to `npm install`
+  - Don't forget to install dependencies: `npm i`
 
 **Comment out each database query** once you get it working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.
 
 - A file called `populateVampires.js` that includes data on vampires that you will add (later).
 
-3. Install `mongoose` with `npm`.  Require it in `app.js`.
+2. Install `mongoose` with `npm`.  Require it in `app.js`.
 
 ## What is a schema?
 
