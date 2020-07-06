@@ -48,7 +48,7 @@ describe('Vampire schema', function() {
             expect(err.errors.victims).to.exist;
             done();
         })
-        
+
     });
     it("should have a default hair color of blonde", function(done){
         const blondie = new Vampire({
@@ -63,7 +63,7 @@ describe('Vampire schema', function() {
         });
         uncool.validate(function(err){
             expect(err.errors.name).to.exist;
-            expect(err.errors.name.kind).to.eq('String');
+            expect(err.errors.name.kind.toLowerCase()).to.eq('string');
             done()
         })
     })
@@ -73,7 +73,7 @@ describe('Vampire schema', function() {
         });
         eight.validate(function(err){
             expect(err.errors.dob).to.exist;
-            expect(err.errors.dob.kind).to.eq('Date');
+            expect(err.errors.dob.kind.toLowerCase()).to.eq('date');
             done()
         })
     })
@@ -83,7 +83,7 @@ describe('Vampire schema', function() {
         });
         uncool.validate(function(err){
             expect(err.errors.eye_color).to.exist;
-            expect(err.errors.eye_color.kind).to.eq('String');
+            expect(err.errors.eye_color.kind.toLowerCase()).to.eq('string');
             done()
         })
     })
@@ -93,7 +93,7 @@ describe('Vampire schema', function() {
         });
         uncool.validate(function(err){
             expect(err.errors.hair_color).to.exist;
-            expect(err.errors.hair_color.kind).to.eq('String');
+            expect(err.errors.hair_color.kind.toLowerCase()).to.eq('string');
             done()
         })
     })
@@ -103,7 +103,7 @@ describe('Vampire schema', function() {
         });
         uncool.validate(function(err){
             expect(err.errors.location).to.exist;
-            expect(err.errors.location.kind).to.eq('String');
+            expect(err.errors.location.kind.toLowerCase()).to.eq('string');
             done()
         })
     })
@@ -113,7 +113,7 @@ describe('Vampire schema', function() {
         });
         uncool.validate(function(err){
             expect(err.errors.gender).to.exist;
-            expect(err.errors.gender.kind).to.eq('String');
+            expect(err.errors.gender.kind.toLowerCase()).to.eq('string');
             done()
         })
     })
@@ -123,7 +123,7 @@ describe('Vampire schema', function() {
         })
         pacifist.validate(function(err){
             expect(err.errors.victims).to.exist;
-            expect(err.errors.victims.kind).to.eq('Number');
+            expect(err.errors.victims.kind.toLowerCase()).to.eq('number');
             done();
         })
     })
