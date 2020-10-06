@@ -32,7 +32,56 @@ mongoose.connection.on('error', (error) => {
 //   process.exit();
 // });
 // ### Add some new vampire data
+const newVampire01 = {
+  name: 'Mr. Vampire',
+  hair_color: 'black',
+  eye_color: 'red',
+  dob: new Date(1956, 5, 18, 20, 17),
+  loves: ['long walks on the beach', 'puppies', 'merlot'],
+  location: 'Venice Beach, CA',
+  gender: 'm',
+  victims: 23
+};
 
+const newVampire02 = {
+  name: 'Cindy Williams',
+  hair_color: 'red',
+  eye_color: 'black',
+  dob: new Date(1902, 5, 18, 20, 17),
+  loves: ['reading', 'cats', 'bike rides'],
+  location: 'Martinez, GA',
+  gender: 'f',
+  victims: 5
+};
+
+const newVampire03 = {
+  name: 'Shirley Upton',
+  hair_color: 'black',
+  eye_color: 'green',
+  dob: new Date(1845, 5, 18, 20, 17),
+  loves: ['sunsets', 'birds', 'public speaking'],
+  location: 'Tucson, AZ',
+  gender: 'f',
+  victims: 150
+};
+
+const newVampire04 = {
+  name: 'Peter Schultz',
+  hair_color: 'blonde',
+  eye_color: 'black',
+  dob: new Date(1703, 5, 18, 20, 17),
+  loves: ['cake', 'knitting', 'hot chocolate'],
+  location: 'Chicago, IL',
+  gender: 'm',
+  victims: 204
+};
+const newVampires = [newVampire01, newVampire02, newVampire03, newVampire04,]
+
+Vampire.create(newVampires, (err, createdVampire) => {
+  if (err) console.log('Query Error', err);
+  else console.log(createdVampire)
+  process.exit();
+});
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
@@ -75,8 +124,3 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 
 
-// Print Database
-Vampire.find({}, (err, data) => {
-  console.log(data);
-  process.exit();
-});
