@@ -23,6 +23,7 @@ const vampireSchema = new mongoose.Schema({
     type: Number,
     min: 0,
   },
+  title: String,
 }, {timestamps: true});
 
 // Model 
