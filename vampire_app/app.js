@@ -23,6 +23,21 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
 
+// Updated Schema with 'title' property and now updating the 2 documents that actually had title properties -------------------------------------------------------------
+// Vampire.updateOne({name: 'Barnabas Spenser'}, 
+// {title: 'Osiris of Sewer Rats'}, (err, updatedVampire) => {
+//     if (err) return console.log(err);
+//     else console.log(updatedVampire);
+//     process.exit();
+// });
+// Vampire.updateOne({name: 'Akasha'}, 
+// {title: 'Queen of the Damned'}, (err, updatedVampire) => {
+//     if (err) return console.log(err);
+//     else console.log(updatedVampire);
+//     process.exit();
+// });
+//----------------------------------------------------------------------------------
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // INSERT USING MONGOOSE
@@ -123,8 +138,36 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
+// Vampire.find( { title: { $exists: true } }, (err, hasTitleVampires) => {
+//   if (err) return console.log(err);
+//   else console.log(hasTitleVampires);
+//   process.exit();
+// });
+
+// Vampire.find( { victims: { $exists: false } }, (err, noVictimsVampires) => {
+//   if (err) return console.log(err);
+//   else console.log(noVictimsVampires);
+//   process.exit();
+// });
+
+// Vampire.find({ $and: [{ title: { $exists: true }}, 
+//   { victims: { $exists: false }}]}, (err, hasTitleNoVictims) => {
+//     if (err) return console.log(err);
+//     else console.log(hasTitleNoVictims);
+//     process.exit();
+//   });
+
+// Vampire.find({ $and: [{ victims: { $exists: true }}, 
+//   { victims: { $gt: 1000 }}]}, (err, _1000plusVictims) => {
+//     if (err) return console.log(err);
+//     else console.log(_1000plusVictims);
+//     process.exit();
+//   });
+
 /////////////////////////////////////////////////
 // ### Select with OR
+
+
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
