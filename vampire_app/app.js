@@ -317,6 +317,19 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 // ## REMOVE
 
+// Vampire.findOneAndRemove({hair_color: 'brown'}, (err, removedVampire) => {
+//     if (err) return console.log(err);
+//     else console.log(removedVampire);
+//     process.exit();
+// });
+
+// Vampire.deleteMany({eye_color: 'blue'}, (err, deletedVampires) => {
+//     if (err) return console.log(err);
+//     else console.log(deletedVampires);
+//     process.exit();
+// });
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
