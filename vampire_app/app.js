@@ -236,6 +236,34 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 //### Negative Selection
 
+// Vampire.find({ $and: [{ loves: 'ribbons' }, 
+// {eye_color: {$ne: 'brown'}}]},
+//    (err, ribbonLovinNotBrownEyes) => {
+//     if (err) return console.log(err);
+//     console.log(ribbonLovinNotBrownEyes);
+//     process.exit();
+//   });
+
+// Vampire.find({location: {$ne: 'Rome, Italy'}},
+//    (err, notFromRomeVampires) => {
+//     if (err) return console.log(err);
+//     console.log(notFromRomeVampires);
+//     process.exit();
+//   });
+
+// Vampire.find({loves: {$nin: ['fancy cloaks', 'frilly shirtsleeves', 'appearing innocent', 'being tragic', 'brooding']}}, (err, loveLittleVampires) => {
+//     if (err) return console.log(err);
+//     console.log(loveLittleVampires);
+//     process.exit();
+//   });
+
+// Vampire.find({victims: { $lte: 200 }}, (err, _200orFewerVictims) => {
+//   if (err) return console.log(err);
+//   else console.log(_200orFewerVictims);
+//   process.exit();
+// });
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
