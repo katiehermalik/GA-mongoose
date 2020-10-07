@@ -268,6 +268,26 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
+// Vampire.findOneAndReplace(
+//   { name: 'Claudia' }, 
+//   {
+//     name: 'Eve',
+//     hair_color: 'purple',
+//     eye_color: 'brown',
+//     dob: new Date(1753, 5, 18, 20, 17),
+//     loves: ['muffins', 'singing', 'swimming'],
+//     location: 'Detroit, MI',
+//     gender: 'f',
+//     victims: 29
+//   }, 
+//   {new: true}, 
+//   (err, replacementVampire) => {
+//   if (err) return console.log(err);
+//   else console.log(replacementVampire);
+//   process.exit();
+// });
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
