@@ -99,6 +99,7 @@ mongoose.connection.on('error', (error) => {
 //   process.exit();
 // });
 
+
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
@@ -135,6 +136,7 @@ mongoose.connection.on('error', (error) => {
 //   process.exit();
 // });
 
+
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
@@ -163,6 +165,7 @@ mongoose.connection.on('error', (error) => {
 //     else console.log(_1000plusVictims);
 //     process.exit();
 //   });
+
 
 /////////////////////////////////////////////////
 // ### Select with OR
@@ -195,8 +198,40 @@ mongoose.connection.on('error', (error) => {
 //     process.exit();
 //   });
 
+
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+
+// Vampire.find({ $or: [{ loves: 'frilly shirtsleeves' }, 
+//   { loves: 'frilly collars' }]}, (err, frillyLovinVampires) => {
+//     if (err) return console.log(err);
+//     else console.log(frillyLovinVampires);
+//     process.exit();
+//   });
+
+// Vampire.find({ loves: 'brooding' }, (err, broodingVampires) => {
+//     if (err) return console.log(err);
+//     else console.log(broodingVampires);
+//     process.exit();
+//   });
+
+// Vampire.find({ $or: [{ loves: 'appearing innocent' }, 
+//   { loves: 'trickery' }, { loves: 'lurking in rotting mansions' }, 
+//   { loves: 'R&B music' }]}, 
+//   (err, eclecticVampires) => {
+//     if (err) return console.log(err);
+//     else console.log(eclecticVampires);
+//     process.exit();
+//   });
+
+// Vampire.find({ $and: [ { loves: 'fancy cloaks' }, 
+// {loves: {$nin: ['top hats', 'virgin blood']}}]},
+//    (err, particularVampires) => {
+//     if (err) return console.log(err);
+//     console.log(particularVampires);
+//     process.exit();
+//   });
+
 
 /////////////////////////////////////////////////
 //### Negative Selection
