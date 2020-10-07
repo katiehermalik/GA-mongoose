@@ -292,6 +292,27 @@ mongoose.connection.on('error', (error) => {
 /////////////////////////////////////////////////
 // ## UPDATE
 
+// Vampire.findOneAndUpdate({name: 'Eve'}, { gender: 'm' }, {new: true}, 
+// (err, updatedVampire) => {
+//     if (err) return console.log(err);
+//     else console.log(updatedVampire);
+//     process.exit();
+// });
+
+// Vampire.findOneAndUpdate({name: 'Eve'}, {name: 'moniker'}, {new: true}, 
+// (err, updatedVampire) => {
+//     if (err) return console.log(err);
+//     else console.log(updatedVampire);
+//     process.exit();
+// });
+
+// Vampire.updateMany({gender: 'f'}, {gender: 'fems'}, (err, updatedVampires) => {
+//     if (err) return console.log(err);
+//     else console.log(updatedVampires);
+//     process.exit();
+// });
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
